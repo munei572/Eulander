@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Apology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .emoji {
+            font-size: 100px;
+            margin: 20px;
+            display: none;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .buttons button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chikota is really sorry... Will you forgive me? 💖</h1>
+        <span id="emoji" class="emoji">😢</span>
+        <p id="message"></p>
+        <div class="buttons">
+            <button class="yes" onclick="respond(true)">Yes</button>
+            <button class="no" onclick="respond(false)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function respond(answer) {
+            let emoji = document.getElementById("emoji");
+            let message = document.getElementById("message");
+            if (answer) {
+                emoji.innerHTML = "😊";
+                emoji.style.display = "block";
+                message.innerHTML = "Please call 0712139822, Chikota is missing you... 💕";
+                window.open("https://www.youtube.com/watch?v=pvPsJFRGleA", "_blank");
+            } else {
+                emoji.innerHTML = "😢";
+                emoji.style.display = "block";
+                message.innerHTML = "I'm really sorry, please forgive me! 💔";
+                window.open("https://www.youtube.com/watch?v=fRh_vgS2dFE", "_blank");
+                setTimeout(() => {
+                    message.innerHTML += "<br>Will you forgive me now? 💖";
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
+
